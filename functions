@@ -1,0 +1,66 @@
+# easier file listings
+
+function l {
+  ls -lLF "$@"
+}
+
+function l. {
+  ls -alLF "$@"
+}
+
+function ll {
+  l "$@" | less -eFX
+}
+
+function ll. {
+  l. "$@" | less -eFX
+}
+
+# tcsh nostalgia
+
+function setenv {
+  _SYM=$1; shift; export $_SYM="$*"
+}
+
+# useful utilities
+
+function map {
+  xargs -n1 "$@";
+}
+
+function repeat {
+  if [ $# -lt 2 ]; then
+    echo "Usage: repeat count command ...";
+    return 1;
+  fi
+  cnt=$1;
+  shift;
+  i=0;
+  while [ $i -lt $cnt ]; do
+    $*;
+    i=$((i + 1));
+  done
+}
+
+# Run `dig` and display the most useful info
+function digga() {
+	dig +nocmd "$1" any +multiline +noall +answer;
+}
+
+# Mac-specific utilities
+
+function ple {
+  plutil -convert xml1 "$1";
+  $EDITOR "$1";
+  plutil -convert binary1 "$1";
+}
+
+function suple {
+  sudo plutil -convert xml1 "$1";
+  sudo $EDITOR "$1";
+  sudo plutil -convert binary1 "$1";
+}
+
+function plj {
+  echo "$(plutil -convert json -o - "$1")";
+}
