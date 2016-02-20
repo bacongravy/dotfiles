@@ -19,3 +19,5 @@ Suggestions/improvements
 
 * [Mathias Bynens](https://mathiasbynens.be/) and his [dotfiles repository](https://github.com/mathiasbynens/dotfiles)
 * [Mike Szymaniak](http://sc0ty.pl/) and his [config repository](https://github.com/sc0ty/config)
+* [Yan Pritzker](http://yanpritzker.com/) and his [dotfiles repository](https://github.com/skwp/dotfiles)
+* [Thoughtbot](https://robots.thoughtbot.com) and their [dotfiles repository](https://github.com/thoughtbot/dotfiles)
