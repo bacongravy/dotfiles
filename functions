@@ -64,3 +64,7 @@ function suple {
 function plj {
   echo "$(plutil -convert json -o - "$1")";
 }
+
+function dmg {
+  hdiutil create -fs HFS+ -srcfolder "$1" -volname "$2" "$2.dmg"
+}
