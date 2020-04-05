@@ -4,7 +4,7 @@ if [ "$1" == "--force" -o "$1" == "-f" ]; then
   force=1;
 fi
 
-for file in {bash_profile,bashrc,tmux.conf,vimrc}; do
+for file in {bash_profile,bashrc,tmux.conf,vimrc,zshrc}; do
   source=.dotfiles/$file;
   destination=~/.$file;
   if [ -e "$destination" ] && [ -z "$force" ]; then
