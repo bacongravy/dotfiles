@@ -1,11 +1,11 @@
 # easier file listings
 
 function l {
-  ls -lLF "$@"
+  ls -lLFG "$@"
 }
 
 function l. {
-  ls -alLF "$@"
+  ls -alLFG "$@"
 }
 
 function ll {
