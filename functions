@@ -47,13 +47,14 @@ function digga() {
 	dig +nocmd "$1" any +multiline +noall +answer;
 }
 
-function pwgen {
+function pwcopy {
   < /dev/urandom \
-  LC_CTYPE=C \
-  tr -dc a-zA-Z0-9 \
-  | head -c ${1:-32} \
-  | tee `tty` \
-  | pbcopy; echo
+    LANG= \
+    tr -dc a-zA-Z0-9 \
+    | head -c ${1:-32} \
+    | pbcopy \
+    && pbpaste \
+    && echo
 }
 
 # Mac-specific utilities
